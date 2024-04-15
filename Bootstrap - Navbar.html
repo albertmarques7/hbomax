@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://127.0.0.1:5500/navbar.html#series -->
+<html lang="pt-BR" data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap - Navbar</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="./Bootstrap - Navbar_files/bootstrap.min.css">
+     <link href="./Bootstrap - Navbar_files/css2" rel="stylesheet">
+     <style>
+        *{
+            font-family: "Roboto",
+            "sans-serif";
+            font-size: 18px;
+            background-color: black;
+        }
+        .navbar-nav .nav-link.active {
+            color: #FFF;
+        }
+        .nav-link {
+            text-align: center;
+        }
+        section {
+            height: 100vh;
+            background-color: #FFF;
+            padding-top: 70px;
+            background-color: black
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            padding-top: 1%;
+            justify-content: center;
+        }
+
+        header #logo {
+            width: 90px;
+        }
+
+        div.container {
+            padding-left: 0;
+            margin-left: 3%;
+
+        }
+
+        header img {
+            width: 20px;
+        }
+
+        .navbar-nav {
+            color: #FFF;
+            align-items: center;
+            display: flex;
+        }
+
+        .navbar-nav, .nav-link:hover {
+            color: white;
+        }
+        .navbar-nav .nav-link.active {
+        color: white;
+        }
+
+        li .nav-link {
+            color: rgba(255, 255, 255, 0.76);
+        }
+        #canto-superior-esquerdo {
+            padding: 0%;
+            margin: 0%;
+        }
+
+</style>
+</head>
+<body>
+    <h1 class="text-center"></h1>
+    <header id="header">
+        <div class="navbar navbar-expand-lg">
+            <div class="container">
+                <img src="./Bootstrap - Navbar_files/maxlogo.png" id="logo" alt="">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <nav class="collapse navbar-collapse navbar-light justify-content-end" id="menu">
+                    <ul class="nav navbar-nav nav-pills ">
+                        <li class="nav-item nav-success"><a class="nav-link active" href="http://127.0.0.1:5500/navbar.html#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/navbar.html#series">Séries</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/navbar.html#Filmes">Filmes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/navbar.html#Familia">Família</a></li>
+                        <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:5500/navbar.html#Infantil">Infantil</a></li>
+                    </ul>
+                <nav class="collapse nav-cel navbar-collapse justify-content-end" id="canto-esquerdo-superior" style="
+    margin-block-end: 10px;
+">
+                    <ul class="nav icons nav-bar align-item-center">
+                    <li class="nav item"><a class="nav-link" href="http://127.0.0.1:5500/navbar.html#"><img src="./Bootstrap - Navbar_files/lupa.png"></a></li>
+                    <li class="nav item"><a class="nav-link" href="http://127.0.0.1:5500/navbar.html#"><img src="./Bootstrap - Navbar_files/lupa.png"></a></li>
+                    <li class="nav item"><a class="nav-link" href="http://127.0.0.1:5500/navbar.html#"><img src="./Bootstrap - Navbar_files/lupa.png"></a></li>
+                    </ul>
+                </nav>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div data-bs-spy="scroll" data-bs-target="#header">
+        <section id="inicio">
+            <h2>Inicio</h2>
+        </section>
+        <section id="produtos">
+            <h2>Produtos</h2>
+            <div class="container">
+                <nav class="nav  nav-pills" role="tablist">
+                    <button class="nav-link active" type="button" data-bs-toggle="tab" data-bs-target="#aba1" aria-selected="true" role="tab">Eletrônicos</button>
+                    <button class="nav-link" type="button" data-bs-toggle="tab" data-bs-target="#aba2" aria-selected="false" tabindex="-1" role="tab">Moda Masculina</button>
+                    <button class="nav-link" type="button" data-bs-toggle="tab" data-bs-target="#aba3" aria-selected="false" tabindex="-1" role="tab">Moda Feminina</button>
+                </nav>
+                <div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="aba1" role="tabpanel">
+                            Conteúdo da aba Eletrônicos
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="aba2" role="tabpanel">
+                            Conteúdo da aba Moda Masculina
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane " id="aba3" role="tabpanel">
+                            Conteúdo da aba Moda feminina
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="promocoes">
+            <h2>Promoções</h2>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+        </section>
+    </div>
+<div data-bs-autohide="false" class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast" id="mensagens-alerta">
+        <header class="toast-header">
+            <strong>Importante</strong>
+        </header>
+        <div class="toast-body">
+            você possui 10 mensagens não lidas.
+            <div class="mt-2 pt-2 border-top">
+                <button class="btn btn-danger" data-bs-dismiss="toast">Descartar</button>    
+        </div>
+        </div>
+    </div>
+</div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+<script src="./Bootstrap - Navbar_files/bootstrap.bundle.min.js.download"></script>
+<script>
+    const ativadorToast = document.getElementById('btn-checar-emails');
+    const mensagem = document.getElementById('mensagens-alerta');
+    if (ativadorToast) {
+        ativadorToast.addEventListener('click', function() {
+            const toast = new bootstrap.Toast(mensagem);
+            toast.show();
+        });
+    }
+</script>
+</body><!-- Bootstrap JS --></html>
