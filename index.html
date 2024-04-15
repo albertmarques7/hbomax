@@ -2,67 +2,554 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap- Cards</title>
-    <link rel="stylesheet" href="./lib/bootstrap.min.css">
-    <style>
-        .card-img-overlay {
-            background-color: rgba(0,0,0,0.5);
+    <title>Max</title>
+    <link rel="short icon" href="https://www.acidadeon.com/tudoep/wp-content/uploads/sites/10/2024/02/max-logo-warner-bros.-discovery.webp" type="max-icon">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+        *{
+            font-family: "Roboto",
+            "sans-serif";
+            font-size: 18px;
+        
         }
-    </style>
+        .navbar-nav .nav-link.active {
+            color: #FFF;
+        }
+        .nav-link {
+            text-align: center;
+            padding: 4px;
+        }
+        #carousel {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        body {
+            background-color: rgb(0, 0, 0); 
+            overflow-x: hidden;
+        }
+        section {
+            background-color: #201f1f20;
+            margin-left: 2%;
+            margin-top: 0;
+            margin-bottom: 10%;
+        }
+
+        header {
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding-top: 0;
+            position: absolute;
+            z-index: 2;
+            background-color: #201f1f00;
+        }
+
+        header #logo {
+            width: 80px;
+            padding-left: 10px;
+        }
+
+        div.container {
+            width: 100%;
+            margin-left: 6.1%;
+            margin-right: 0;
+            padding-right: 0;
+            display: block;
+        }
+
+        header img {
+            width: 25px;
+            margin-right: 20%;
+        }
+
+        .navbar-nav {
+            color: #FFF;
+            align-items: center;
+            
+        }
+
+        .navbar-nav, .nav-link:hover {
+            color: white;
+        }
+        .navbar-nav .nav-link.active {
+        color: rgb(103, 101, 101);
+        }
+
+        li .nav-item {
+            margin-left: 100px;
+        }
+        
+        li .nav-link {
+            color: rgba(255, 255, 255, 0.76);
+            margin-left: 15px;
+            justify-content: space-between;
+        }
+        .custom-link-font {
+        font-family: 'Roboto', sans-serif; 
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0) 70%), linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(90deg, rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.25) 15%, rgba(0, 0, 0, 0) 50%);
+        }   
+        #menu {
+            margin-left: 8%;
+        }
+        .categoria {
+        margin-top: 80px;
+        display: block;
+        align-items: baseline;
+        justify-content: center;
+        }
+        section h6 {
+            margin-left: 200%;
+        }
+
+        #mais-assistidos {
+            padding-left: 70px;
+            margin-left: 0;
+            padding-right: 10px;
+            justify-content: end;
+            margin-bottom: 0;
+            padding-bottom:0;
+            background: linear-gradient(0deg, rgba(40, 0, 80, 0.445) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(145, 12, 12, 0) 70%), linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%), linear-gradient(90deg, rgba(5, 5, 5, 0.3) 100%, rgba(0, 0, 0, 0.25) 15%, rgba(0, 0, 0, 0) 50%);
+        
+        }   
+
+        .card-img-overlay {
+            cursor:pointer;
+        }
+        
+        .col-lg-4:hover{
+            transform: scale(1.1);
+        }
+        .card img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px 5px rgba(148,0,211,0.7);
+        }
+        .card-img-overlay h5{
+                margin-top: 105px;
+                font-size: 16px;
+            }
+
+        .section img {
+            width: 10px;
+        }
+        .card-img-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .container-card h5 {
+            font-size: 80%;
+        }
+        .links-footer {
+            display: flex;
+            align-items: baseline;
+            padding-left: 50px;
+            margin-left: 10%;
+        }
+
+        footer img {
+            width: 1px;
+        }
+        .links-footer img {
+            width: 30%;
+            margin-left: 20px;
+        }
+        .d-flex a {
+            padding-right: 0;
+            text-decoration: none;
+            color: #FFF;
+
+        }
+        .carousel-item a {
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .ra {
+            background-color:purple;
+        }
+
+        .col-2 {
+            margin-left: 5px;
+            margin-top: 35px;
+        }
+        .col-4 h5 {
+            margin-top: 28%;
+        }
+        .container-card  {
+            margin-top: 12px;
+            margin-left: 10px;
+        }
+        
+        .fs-4 {
+            padding-right: 10px;
+        }
+        .numero-10  {
+            margin-left: 3.5px;
+            padding-left: 0;
+            margin-top: 40px;
+        }
+        .numero-10 a {
+        background-color: transparent;
+        margin-right: -8px;
+        margin-top: 5px;
+        background-color:transparent;
+        }
+        
+        .col-lg-2 a {
+            background-color:transparent;
+        }
+
+        footer p,a  {
+            font-size: 16px;
+        }
+        footer img {
+            width: 1px;
+        }
+        .container-footer {
+            background: rgba(40, 0, 80, 0.445);
+            padding-top: 10%;
+        }
+        .footer-li a {
+            margin-right: 30px;
+        }
+        .container-footer p {
+            margin-left: 15%;
+            margin-right:30px;
+            
+        }
+        .col-lg-2 {
+            padding: 5px;
+            margin-left: -8px;
+        }
+        .numero-10 {
+            padding-left: px;
+        }
+        .numero-10 img {
+            width: 100%;
+            height: auto;
+        }
+    
+        @media screen and (min-width:641px) and (max-width: 1023px) {
+        
+        body {
+        max-width: 100%;
+        }
+        .container {
+            margin-left: 100px;
+        }
+        .carousel {
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+        }
+        .card-img-overlay h5 {
+            font-size: 12px;
+            top: 400px;
+            margin-top: 17%;
+        }
+        .col-md-6 {
+            margin-top: 18px;
+            
+        }
+        .col-2 {
+            padding: 0;
+            margin-left: 10px;
+        }
+        #mais-assistidos {
+            margin: 0;
+            margin-left: 10px;
+            padding-left: 0px;
+            padding-right: 0;
+        }
+        .container-card .fs-4 {
+            padding: 0;
+            font-size: 0px;
+        } 
+        .d-flex p {
+            margin:0;
+            font-size: 10px;
+
+        }
+        p.d-flex {
+            margin-left: 183px;
+        }
+        .links-footer {
+            padding: 0;
+            margin: 0;
+        }
+        .links-footer li a {
+            font-size: 10px;
+            white-space: nowrap;
+        }
+        .col-2.h4 {
+            margin-bottom: 0;
+        }
+
+
+}
+        @media screen and (max-width:640px) {
+            
+            #mais-assistidos{
+                padding-left: 0;
+            }
+            .links-footer {
+                display: block;
+                padding-left: 0;
+                margin: 0;
+            }
+            .social-media {
+                padding-left: 10px;
+            }
+            footer .d-flex {
+                justify-content: center;
+            }
+            .carousel a {
+                display: none;
+            }
+            .card-img-overlay h5{
+                margin-top: 40px;
+            }
+        }
+</style>
 </head>
-<body>
-    <h1>Bootstrap - Cards</h1>    
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <article class="card">
-                    <header>
-                        Dsenvolvimento Web
-                    </header>
-                    <img src="https://placeholder.pics/svg/100" alt="">
-                    <div class="card-body">
-                        <h4 class = card-title> titulo do card</h4>
-                        <h5 class = card-subtitle> subtitulo</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dignissimos accusamus sint quod tempora dolorum suscipit debitis officiis excepturi quibusdam modi officia, culpa cumque commodi perspiciatis beatae nemo fugiat quam?</p>
-                        <a href="#" class="btn btn-primary">Leia mais</a>
-                        <div class="card-footer">
-                            Postado em <time>10/08/2024 ás 19:00:00</time>
-                        </div>
-                    </div>
-                </article>
+<body class="overflow-hidden-y">
+<!-- cabeçalho -->
+    <header id="header">
+        <div class="navbar navbar-expand-lg" id="navbar-conteudos">
+            <div class="container-fluid ">
+                <img src="https://hbo-max-five.vercel.app/imgs/maxlogo.png" id="logo" alt="">
+                <nav class="collapse navbar-collapse navbar-light justify-content-0" id="menu">
+                    <ul class="nav navbar-nav txts-header">
+                        <li class="nav-item"><a class="nav-link " href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#series">Séries</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Filmes">Filmes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Familia">Família</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Infantil">Infantil</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul class="nav icons nav-bar align-item-center">
+                    <li class="nav item"><a class="nav-link" href="#lupa"><img src="https://hbo-max-five.vercel.app/imgs/lupa.png"></a></li>
+                    <li class="nav item"><a class="nav-link" id="user" href="#user"><img src="https://hbo-max-five.vercel.app/imgs/user.png"></a></li>
+                    <li class="nav item"><a class="nav-link" href="#favoritos"><img src="https://hbo-max-five.vercel.app/imgs/favoritos.png"></a></li>
+                    </ul>
+                </nav>
+                </nav>
             </div>
-            <div class="col-4">
-                <div class="card text-bg-dark">
-                    <img src="https://assets.gcore.pro/blog_containerizing_prod/uploads/2023/07/what-is-image-cdn-fi.png" alt="">
-                    <div class="card-img-overlay">
-                        <h4 class = card-title> titulo do card</h4>
-                        <h5 class = card-subtitle> subtitulo</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dignissimos accusamus sint quod tempora dolorum suscipit debitis officiis excepturi quibusdam modi officia, culpa cumque commodi perspiciatis beatae nemo fugiat quam?</p>
-                        <a href="#" class="btn btn-primary">Leia mais</a>
-                    </div>
-                    <footer>
-                        <div class="card-footer">
-                            Postado em <time>10/08/2024 ás 19:00:00</time>
+        </div>
+    </header>
+    <!-- Carousel -->
+    <div class="container-fluid" id="carousel">
+        <div class="row ">
+            <div class="carousel carousel-fade slide" data-bs-ride="carousel" id="carousel-exemplo">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <div id="overlay"></div>
+                        <img class="d-block w-100 act" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/ED77D3407DF8B9FFF54DEC4A08EA67689CC084BCC62A1C53696F7E01413F2CD7/scale?width=1200&aspectRatio=1.78&format=webp" alt="imagem default">
+                        <div class="carousel-caption">
+                            <a href="#" class="font-weight-bold custom-link-font text-decoration-none text-white">The Eras Tour - Concert Movie</a>
                         </div>
-                    </footer>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <div id="overlay"></div>
+                        <img class="d-block w-100" src="https://m.media-amazon.com/images/S/pv-target-images/d649f72d8a3e4e7eefe9d04093e3892c3b3af9c47959dc06bfdab9473d6dafec.jpg" alt="imagem default">
+                        <div class="carousel-caption">
+                            <a href="#" class="custom-link-font text-decoration-none text-white">Barbie</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item " data-bs-interval="3000">
+                        <div id="overlay"></div>
+                        <img class="d-block w-100" src="https://w.forfun.com/fetch/92/92200e3a43b73fb9bb5e49cc6cf27eeb.jpeg" alt="imagem default">
+                        <div class="carousel-caption">
+                            <a href="#" class="text-decoration-none text-white">Avatar: The Last Airbender</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        Desenvolvimento Web
-                    </div>
-                    <img src="https://placeholder.pics/svg/100" alt="">
-                    <div class="card-body">
-                        <h4 class = card-title> Cards do bootstrap</h4>
-                        <p>Conheça os cards do bootstrap</p>
-                        <a href="#" class="btn btn-primary">botão</a>
-                    </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-exemplo" data-bs-slide="prev" title="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-exemplo" data-bs-slide="next" title="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carousel-exemplo" data-bs-slide-to="2"></button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="./lib/bootstrap.bundle.min.js"></script>
+    <div class="categoria text-light"data-bs-spy="scroll" data-bs-target="#header">
+        <section id="continue">
+            <div class="categoria">
+                <h2 class="fs-4">Continue Assistindo</h2>
+            </div>
+            <div class="cards">
+            <div class="container-card ">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                <div class="card text-bg-dark ">
+                                    <a href="#"></a><img src="https://www.animeunited.com.br/oomtumtu/2016/12/ehbomsaber_DigimonTri.jpg" alt="" srcset="">
+                                    <div class="card-img-overlay "style="border-radius:0;">
+                                        <a href="#" class="h5 text-decoration-none">Digimon Tri</a> 
+                                        <h5 class="h6 pt-5 fs-8 card-subtitle">TK encontra Patamon que digievolui para Quenomon.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12  mb-4">
+                                <div class="card text-bg-dark">
+                                    <img src="https://i.ytimg.com/vi/e02fwhC6DiQ/maxresdefault.jpg" alt="" srcset="">
+                                    <div class="card-img-overlay "style="border-radius:0;">
+                                        <a href="#" class="h5 text-decoration-none">Harry Potter</a> 
+                                        <h5 class="h6 pt-5 fs-8 card-subtitle">Harry Potter embarca em uma missão cheia de mistérios e segredos.</h4>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12  mb-4">
+                                <div class="card text-bg-dark">
+                                    <img src="https://beam-images.warnermediacdn.com/BEAM_LWM_DELIVERABLES/eb66748d-f7f2-458a-aa7b-488e2fb8bef1/f01f41f73722ed47764b740bb241c5d4f9fc5419.jpg?submitted=1684674457634&host=wbd-images.prod-vod.h264.io&partner=beamcom" alt="Steven Universo">
+                                    <div class="card-img-overlay "style="border-radius:0;">
+                                        <a href="#" class="h5 text-decoration-none">Steven Universo</a> 
+                                        <h5 class="h6 pt-5 fs-8 card-subtitle">Steven passa por uma jornada de descobertas sobre seus poderes e origem.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="mais-assistidos">
+            <h2>Top 10 </h2>
+            <div class="cards ">
+                <div class="container-card">
+                        <div class="row mb-2" id="mais-assistidos">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-lg-2 d-flex">
+                                    <h4 class="fs-4 pr-1">1º</h4>
+                                    <a href="#"class="card ">
+                                        <img src="https://i.redd.it/2xt2h9pokkec1.jpeg" alt="Digimon tri poster">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-2 d-flex">
+                                    <h4 class="fs-4 pr-1">2º</h4>
+                                    <a href ="#" class=" card ">
+                                        <img src="https://uauposters.com.br/media/catalog/product/1/7/175820140528-uau-posters-filmes-harry-potter-8-e-as-reliquias-da-morte-parte-2-5.jpg" alt="Digimon tri poster">
+                                    </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-2 d-flex">
+                                    <h4 class="fs-4 pr-1">3º</h4>
+                                    <a href="#" class="card ">
+                                        <img src="https://img.elo7.com.br/product/zoom/2657A05/big-poster-harry-potter-e-o-prisioneiro-de-azkaban-lo2-90x60-geek.jpg" alt="Digimon tri poster">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-2 d-flex">
+                                    <h4 class="fs-4 pr-1">4º</h4>
+                                    <a href="#" class="card rounded ">
+                                        <img src="https://img.elo7.com.br/product/zoom/2692949/big-poster-o-senhor-dos-aneis-o-retorno-do-rei-lo09-90x60-cm-o-senhor-dos-aneis-o-retorno-do-rei.jpg" alt="Digimon tri poster">
+                                    </a>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-2 d-flex">
+                                    <h4 class="fs-4 pr-1">5º</h4>
+                                    <a href="#" class="card ">
+                                        <img src="https://br.web.img2.acsta.net/pictures/23/10/03/17/05/5620047.jpg" alt="Digimon tri poster">
+                                    </a>
+                                </div>
+                                    <div class="col-sm-6 col-md-5 col-lg-2 mt-2 d-flex">
+                                        <h4 class="fs-4 pr-1">6º</h4>
+                                        <a href="#" class="card">
+                                            <img src="https://i.pinimg.com/564x/5f/20/05/5f2005d8d926721e1d0a53443005ed39.jpg" alt="Digimon tri poster">
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-2 mt-2 d-flex">
+                                        <h4 class="fs-4 pr-1">7º</h4>
+                                        <a href="#" class="card ">
+                                            <img src="https://br.web.img3.acsta.net/pictures/23/06/27/15/53/3241421.jpg" alt="Digimon tri poster">
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-2 mt-2 d-flex">
+                                        <h4 class="fs-4 pr-1">8º</h4>
+                                        <a href="#" class="card ">
+                                            <img src="https://jpimg.com.br/uploads/2018/11/anitta.jpg" alt="Digimon tri poster">
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-2 mt-2 d-flex">
+                                        <h4 class="fs-4 pr-1">9º</h4>
+                                        <a href="#" class="card">
+                                            <img src="https://i.pinimg.com/564x/0e/cb/27/0ecb27999b0cb946fceaee6c4d388700.jpg" alt="Digimon tri poster">
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-2 mt-2 d-flex numero-10">
+                                        <h4 class="fs-4 pr-1">10º</h4>
+                                        <a href="#" class="card ">
+                                            <img src="https://m.media-amazon.com/images/M/MV5BZGEwYmMwZmMtMTQ3MS00YWNhLWEwMmQtZTU5YTIwZmJjZGQ0XkEyXkFqcGdeQXVyMTI5MzA5MjA1._V1_FMjpg_UX1000_.jpg" alt="Digimon tri poster">
+                                        </a>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container-footer">
+            <div class="d-flex">
+                <p>© 2024 - Desenvolvido por Alberto Marques - Exercício para EBAC</p>
+                <p class="d-flex ">© 2024 WarnerMedia Direct, LLC. Todos os direitos reservados.</p>
+            </div>
+            <div class="links-footer">
+                <ul style = "list-style:none" class="d-flex social-midia">
+                    <li>
+                        <a href="">
+                            <img src="https://hbo-max-five.vercel.app/imgs/yt.png" alt="youtube logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://hbo-max-five.vercel.app/imgs/tw.png" alt="x logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://hbo-max-five.vercel.app/imgs/face.png" alt="facebook logo">
+                        </a>
+                    </li>
+                </ul>
+                <ul style="list-style: none" class="d-flex footer-li ">
+                    <li>
+                        <a href="#">Politica de Privacidade</a>
+                    </li>
+                    <li>
+                        <a href="#">Termos de Uso</a>
+                    </li>
+                    <li>
+                        <a href="#">Gerenciar preferências de cookies</a>
+                    </li>
+                    <li>
+                        <a href="#">Info</a>
+                    </li>
+                    <li>
+                        <a href="#">Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>
